@@ -20,7 +20,8 @@ async def ping(ctx):
 
 @bot.command()
 async def redeem(ctx, code):
-    author  = ctx.author.name 
+    author  = ctx.author
+    await ctx.send(author)
     valid_codes = ['alphabet', 'bubbles', 'cat']
     
     disallowed_users = ['HaroldSaxon', 'Macrologia']
