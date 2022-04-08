@@ -15,5 +15,9 @@ async def on_ready():
 async def ping(ctx):
     await ctx.send("pong")
 
+@bot.command()
+async def redeem(ctx, code):
+    await ctx.send(f"You redeemed:" {code})
+    
 if __name__ == "__main__":
     bot.run(TOKEN)
