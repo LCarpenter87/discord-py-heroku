@@ -21,10 +21,12 @@ async def redeem(ctx, code):
     valid_codes = ['alphabet', 'bubbles', 'cat']
     
     if author == 'HaroldSaxon':
-        await ctx.send('Sorry. Lukas is not allowed to enter') 
+        await ctx.send('Sorry. Lukas is not allowed to enter')
+        return None
    
     if author == 'Macrologia':
-        await ctx.send('Sorry. Macrologia is not allowed to enter')     
+        await ctx.send('Sorry. Macrologia is not allowed to enter')
+        return None
     
     if code in valid_codes:
         await ctx.send(f"{ctx.author.name} You redeemed: {code}")
