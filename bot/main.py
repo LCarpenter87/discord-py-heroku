@@ -19,6 +19,13 @@ async def ping(ctx):
 async def redeem(ctx, code):
     author  = ctx.author.name 
     valid_codes = ['alphabet', 'bubbles', 'cat']
+    
+    if author == 'HaroldSaxon':
+        await ctx.send('Sorry. Lukas is not allowed to enter') 
+   
+    if author == 'Macrologia':
+        await ctx.send('Sorry. Macrologia is not allowed to enter')     
+    
     if code in valid_codes:
         await ctx.send(f"{ctx.author.name} You redeemed: {code}")
     else: 
