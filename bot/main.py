@@ -21,16 +21,15 @@ async def ping(ctx):
 @bot.command()
 async def redeem(ctx, code):
     author  = ctx.author
-    await ctx.send(author)
     valid_codes = ['alphabet', 'bubbles', 'cat']
     
     disallowed_users = ['HaroldSaxon', 'Macrologia']
-    if author in disallowed_users:
-        await ctx.send(f'Sorry. {author} is not allowed to enter')
+    if ctx.author.name in disallowed_users:
+        await ctx.reply(f'Sorry. {author} is not allowed to enter')
         return None
     
     if code in valid_codes:
-        await ctx.send(f"{ctx.author.name} You redeemed: {code}")
+        await ctx.reply(f"{ctx.author.name} You redeemed: {code}")
     else: 
         await ctx.send('Fuck off that aint a code')
     
