@@ -3,8 +3,7 @@ import os
 from datetime import date
 from discord.ext import commands
 
-import dj_database_url
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
 
 
 
