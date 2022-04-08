@@ -17,7 +17,7 @@ async def ping(ctx):
 
 @bot.command()
 async def redeem(ctx, code):
-    await ctx.send(f"You redeemed: {code}")
+    await ctx.send(f"{ctx.author.name} You redeemed: {code}")
     
 if __name__ == "__main__":
     bot.run(TOKEN)
