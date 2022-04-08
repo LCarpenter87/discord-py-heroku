@@ -4,9 +4,6 @@ from datetime import date
 from discord.ext import commands
 
 
-
-
-
 bot = commands.Bot(command_prefix="!")
 TOKEN = os.getenv("DISCORD_TOKEN")
 
