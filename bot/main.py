@@ -1,11 +1,14 @@
 import discord
 import os
-from datetime import date
+import psycopg2
 from discord.ext import commands
 
-
 bot = commands.Bot(command_prefix="!")
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+
+DATABASE_URL = os.environ['DATABASE_URL']
 TOKEN = os.getenv("DISCORD_TOKEN")
+
 
 @bot.event
 async def on_ready():
