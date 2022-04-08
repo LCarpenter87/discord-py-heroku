@@ -3,10 +3,10 @@ import os
 import psycopg2
 from discord.ext import commands
 
+DATABASE_URL = os.getenv('DATABASE_URL')
 bot = commands.Bot(command_prefix="!")
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
-DATABASE_URL = os.getenv('DATABASE_URL')
 TOKEN = os.getenv("DISCORD_TOKEN")
 
 
