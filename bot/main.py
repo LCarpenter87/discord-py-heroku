@@ -26,6 +26,8 @@ def validate_code(code, author):
  
 async def create_redemption(code, author):
     cursor.execute("INSERT INTO redemptions values (code, author) ")
+    cursor.commit() 
+    return 'Success'
     
 @bot.command()
 async def redeem(ctx, code):
@@ -39,7 +41,10 @@ async def redeem(ctx, code):
     if validate_code(code, author):
         create_redemption(code, author)
         
-        await ctx.reply('Cool. Redeemed. #2')
+        if create_redemption(code, author) == 'Success': 
+            await ctx.reply('Cool. Redeemed. #2')
+        else:
+            await ctx.reply('wut')
     else:
         await ctx.reply("Sorry, I couldn't redeem that")
         
