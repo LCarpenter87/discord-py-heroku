@@ -31,7 +31,7 @@ async def redeem(ctx, code):
     if code in valid_codes:
         await ctx.reply(f"{ctx.author.name} You redeemed: {code}")
     else: 
-        await ctx.send('Fuck off that aint a code')
+        await ctx.send('Invalid, sorry')
     
 if __name__ == "__main__":
     bot.run(TOKEN)
