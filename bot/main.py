@@ -42,11 +42,11 @@ async def redeem(ctx, code):
         create_redemption(code, author)
         
         if create_redemption(code, author) == 'Success': 
-            await ctx.reply('Cool. Redeemed. #2')
+            await ctx.reply('Cool. Redeemed. #3')
         else:
-            await ctx.reply('wut')
+            await ctx.reply('wut #3')
     else:
-        await ctx.reply("Sorry, I couldn't redeem that")
+        await ctx.reply("Sorry, I couldn't redeem that #3")
         
     
 if __name__ == "__main__":
