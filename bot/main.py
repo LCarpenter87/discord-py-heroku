@@ -9,7 +9,6 @@ conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 cursor = conn.cursor() 
 conn.autocommit = True 
 
-
 TOKEN = os.getenv("DISCORD_TOKEN")
 
 
@@ -17,8 +16,7 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 async def on_ready():
     print(f"Logged in as {bot.user.name}({bot.user.id})")
 
-
-async def validate_code(code, author):
+def validate_code(code, author):
     ## for now just checking that the code is still un-redeemed 
     ## to do is add the concept of many users being able to redeem a code one time. 
     
@@ -41,7 +39,7 @@ async def redeem(ctx, code):
     if validate_code(code, author):
         create_redemption(code, author)
         
-        await ctx.reply('Cool. Redeemed')
+        await ctx.reply('Cool. Redeemed. #2')
     else:
         await ctx.reply("Sorry, I couldn't redeem that")
         
